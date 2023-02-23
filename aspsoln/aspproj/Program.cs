@@ -1,4 +1,5 @@
 using aspproj.Data;
+using aspproj.Models.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,6 +14,9 @@ builder.Services.AddDbContext<ProjDbContext>(Option =>
 {
     Option.UseSqlServer(builder.Configuration.GetConnectionString("NZWalks"));
 });
+
+builder.Services.AddScoped<IRegionRepository, RegionRepository>();
+builder.Services.AddAutoMapper(typeof(Program).Assembly);
 
 var app = builder.Build();
 
