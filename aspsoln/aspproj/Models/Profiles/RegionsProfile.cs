@@ -1,4 +1,5 @@
-﻿using AutoMapper;
+﻿using aspproj.Models.dto;
+using AutoMapper;
 
 namespace aspproj.Models.Profiles
 {
@@ -6,7 +7,7 @@ namespace aspproj.Models.Profiles
     {
         public RegionsProfile()
         {
-            CreateMap<Models.domain.Region, Models.domain.dto.Region>().ReverseMap();            
+            CreateMap<Models.domain.Region, Region>().ReverseMap();            
         }
     }
 }

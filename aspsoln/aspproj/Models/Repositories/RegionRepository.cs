@@ -1,5 +1,6 @@
 ﻿using aspproj.Data;
 using aspproj.Models.domain;
+using Microsoft.EntityFrameworkCore;
 
 namespace aspproj.Models.Repositories
 {
@@ -10,14 +11,61 @@ namespace aspproj.Models.Repositories
         {
             this.projDbContext = projDbContext;            
         }
-        public IEnumerable<Region> GetAll()
+
+        public async Task<Region> AddAsync(Region region)
         {
-            return projDbContext.Regions.ToList();
+            region.Id = Guid.NewGuid();
+            await projDbContext.AddAsync(region);
+            await projDbContext.SaveChangesAsync();
+            return region;
+
         }
 
-        public IEnumerable<Region> GetAllRegionUsingDto()
+        public async Task<Region> DeleteAsync(Guid id)
         {
-            return projDbContext.Regions.ToList();
+            var region = await projDbContext.Regions.FirstOrDefaultAsync( x => x.Id == id);
+            
+            if (region == null)
+            {
+                return null;
+            }
+
+            projDbContext.Regions.Remove(region);
+            await projDbContext.SaveChangesAsync();
+            return region;
+        }
+
+        public async Task<IEnumerable<Region>> GetAllAsync()
+        {
+            return await projDbContext.Regions.ToListAsync();
+        }
+
+        public async Task<IEnumerable<Region>> GetAllRegionUsingDto()
+        {
+            return await projDbContext.Regions.ToListAsync();
+        }
+
+        public async Task<Region> GetAsync(Guid id)
+        {
+           return await projDbContext.Regions.FirstOrDefaultAsync(x => x.Id == id); 
+        }
+
+        public async Task<Region> UpdateAsync(Guid id, Region region)
+        {
+            var existRegion = await projDbContext.Regions.FirstOrDefaultAsync(x => x.Id == id);
+            if (existRegion == null) { return null; }
+
+            existRegion.Code = region.Code;
+            existRegion.Name = region.Name;
+            existRegion.Area = region.Area;
+            existRegion.Long =  region.Long;
+            existRegion.Lat = region.Lat;
+            existRegion.Population = region.Population;
+
+            await projDbContext.SaveChangesAsync();
+            return existRegion;
+
+
         }
     }
 }
