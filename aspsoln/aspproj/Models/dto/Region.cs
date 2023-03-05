@@ -1,6 +1,6 @@
-﻿using aspproj.Models.domain;
+﻿using AspProjAPI.Models.domain;
 
-namespace aspproj.Models.dto
+namespace AspProjAPI.Models.dto
 {
     public class Region
     {

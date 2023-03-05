@@ -1,4 +1,4 @@
-﻿namespace aspproj.Models.domain
+﻿namespace AspProjAPI.Models.domain
 {
     public class Region
     {

@@ -1,6 +1,6 @@
-﻿using aspproj.Models.domain;
+﻿using AspProjAPI.Models.domain;
 
-namespace aspproj.Models.Repositories
+namespace AspProjAPI.Models.Repositories
 {
     public interface IRegionRepository
     {

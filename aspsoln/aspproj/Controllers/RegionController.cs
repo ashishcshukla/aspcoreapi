@@ -1,9 +1,9 @@
-﻿using aspproj.Models.dto;
-using aspproj.Models.Repositories;
+﻿using AspProjAPI.Models.dto;
+using AspProjAPI.Models.Repositories;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 
-namespace aspproj.Controllers
+namespace AspProjAPI.Controllers
 {
     [ApiController]
     [Route("[controller]")]

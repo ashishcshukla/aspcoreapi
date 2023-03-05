@@ -1,7 +1,7 @@
-﻿using aspproj.Models.dto;
+﻿using AspProjAPI.Models.dto;
 using AutoMapper;
 
-namespace aspproj.Models.Profiles
+namespace AspProjAPI.Models.Profiles
 {
     public class RegionsProfile : Profile
     {

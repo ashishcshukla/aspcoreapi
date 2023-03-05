@@ -9,7 +9,7 @@
     }
   },
   "profiles": {
-    "aspproj": {
+    "AspProjAPI": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,

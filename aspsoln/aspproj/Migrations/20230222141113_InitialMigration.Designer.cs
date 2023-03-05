@@ -5,11 +5,11 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using aspproj.Data;
+using AspProjAPI.Data;
 
 #nullable disable
 
-namespace aspproj.Migrations
+namespace AspProjAPI.Migrations
 {
     [DbContext(typeof(ProjDbContext))]
     [Migration("20230222141113_InitialMigration")]
@@ -24,7 +24,7 @@ namespace aspproj.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("aspproj.Models.domain.Region", b =>
+            modelBuilder.Entity("AspProjAPI.Models.domain.Region", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -55,7 +55,7 @@ namespace aspproj.Migrations
                     b.ToTable("Regions");
                 });
 
-            modelBuilder.Entity("aspproj.Models.domain.Walk", b =>
+            modelBuilder.Entity("AspProjAPI.Models.domain.Walk", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -83,7 +83,7 @@ namespace aspproj.Migrations
                     b.ToTable("Walks");
                 });
 
-            modelBuilder.Entity("aspproj.Models.domain.WalkDifficulty", b =>
+            modelBuilder.Entity("AspProjAPI.Models.domain.WalkDifficulty", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -98,15 +98,15 @@ namespace aspproj.Migrations
                     b.ToTable("WalkDifficulty");
                 });
 
-            modelBuilder.Entity("aspproj.Models.domain.Walk", b =>
+            modelBuilder.Entity("AspProjAPI.Models.domain.Walk", b =>
                 {
-                    b.HasOne("aspproj.Models.domain.Region", "Region")
+                    b.HasOne("AspProjAPI.Models.domain.Region", "Region")
                         .WithMany("Walks")
                         .HasForeignKey("RegionId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("aspproj.Models.domain.WalkDifficulty", "WalkDifficulty")
+                    b.HasOne("AspProjAPI.Models.domain.WalkDifficulty", "WalkDifficulty")
                         .WithMany()
                         .HasForeignKey("WalkDifficultyId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -117,7 +117,7 @@ namespace aspproj.Migrations
                     b.Navigation("WalkDifficulty");
                 });
 
-            modelBuilder.Entity("aspproj.Models.domain.Region", b =>
+            modelBuilder.Entity("AspProjAPI.Models.domain.Region", b =>
                 {
                     b.Navigation("Walks");
                 });

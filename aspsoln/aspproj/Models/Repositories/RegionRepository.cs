@@ -1,13 +1,13 @@
-﻿using aspproj.Data;
-using aspproj.Models.domain;
+﻿using AspProjAPI.Data;
+using AspProjAPI.Models.domain;
 using Microsoft.EntityFrameworkCore;
 
-namespace aspproj.Models.Repositories
+namespace AspProjAPI.Models.Repositories
 {
-    public class RegionRepository : IRegionRepository
+    public class WalkRepository : IRegionRepository
     {
         private readonly ProjDbContext projDbContext;
-        public RegionRepository(ProjDbContext projDbContext)
+        public WalkRepository(ProjDbContext projDbContext)
         {
             this.projDbContext = projDbContext;            
         }

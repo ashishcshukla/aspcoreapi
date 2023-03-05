@@ -1,7 +1,7 @@
-﻿using aspproj.Models.domain;
+﻿using AspProjAPI.Models.domain;
 using Microsoft.EntityFrameworkCore;
 
-namespace aspproj.Data
+namespace AspProjAPI.Data
 {
     public class ProjDbContext : DbContext
     {

@@ -1,4 +1,4 @@
-namespace aspproj
+namespace AspProjAPI
 {
     public class WeatherForecast
     {

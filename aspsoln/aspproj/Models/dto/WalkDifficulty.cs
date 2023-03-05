@@ -1,8 +1,8 @@
-﻿namespace AspProjAPI.Models.domain
+﻿namespace AspProjAPI.Models.dto
 {
     public class WalkDifficulty
     {
-        public Guid Id { get; set; }
+        public Guid id { get; set; }
         public string Code { get; set; }
     }
 }

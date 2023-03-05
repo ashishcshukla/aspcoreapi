@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace aspproj.Migrations
+namespace AspProjAPI.Migrations
 {
     public partial class InitialMigration : Migration
     {

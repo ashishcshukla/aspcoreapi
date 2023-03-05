@@ -1,4 +1,4 @@
-﻿namespace aspproj.Models.dto
+﻿namespace AspProjAPI.Models.dto
 {
     public class UpdateRegionRequest
     {
